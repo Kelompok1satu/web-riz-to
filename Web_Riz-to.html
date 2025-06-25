@@ -1,220 +1,163 @@
 <!DOCTYPE html>
-
 <html lang="id">
 
 <head>
-
   <meta charset="UTF-8" />
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Riz-To Snack</title>
-
   <script src="https://cdn.tailwindcss.com"></script>
-
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <link rel="icon" type="image/x-icon" href="946b1906-f3a9-41c1-acdf-4234b909d0de.jfif"/>
-
+  <link rel="icon" type="image/x-icon" href="946b1906-f3a9-41c1-acdf-4234b909d0de.jfif" />
   <style>
-
     * {
-
       font-family: 'Montserrat', sans-serif;
-
     }
 
     #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom right, #3b82f6, #facc15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      z-index: 50;
+      transition: opacity 0.5s ease;
+    }
 
-     position: fixed;
+    @keyframes bounce {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
 
-     top: 0; left: 0;
+      50% {
+        transform: translateY(-10px);
+      }
+    }
 
-     width: 100%;
+    .animate-bounce {
+      animation: bounce 1s infinite;
+    }
 
-     height: 100%;
+    @keyframes pulse {
+      0%,
+      100% {
+        opacity: 1;
+      }
 
-     background: linear-gradient(to bottom right, #3b82f6, #facc15);
+      50% {
+        opacity: 0.5;
+      }
+    }
 
-     display: flex;
-
-     align-items: center;
-
-     justify-content: center;
-
-     flex-direction: column;
-
-     z-index: 50;
-
-     transition: opacity 0.5s ease;
-
-}
-
-@keyframes bounce {
-
-  0%, 100% { transform: translateY(0); }
-
-  50% { transform: translateY(-10px); }
-
-}
-
-
-
-.animate-bounce {
-
-  animation: bounce 1s infinite;
-
-}
-
-
-
-@keyframes pulse {
-
-  0%, 100% { opacity: 1; }
-
-  50% { opacity: 0.5; }
-
-}
-
-
-
-.animate-pulse {
-
-  animation: pulse 1.5s infinite;
-
-}
-
-
+    .animate-pulse {
+      animation: pulse 1.5s infinite;
+    }
 
     .spinner {
-
       border-radius: 0%;
-
       width: 60px;
-
       height: 60px;
-
       animation: spin 1s linear infinite;
-
     }
 
     @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
 
-      0% { transform: rotate(0deg); }
-
-      100% { transform: rotate(360deg); }
-
+      100% {
+        transform: rotate(360deg);
+      }
     }
 
     .wa-float {
-
       position: fixed;
-
       bottom: 20px;
-
       right: 20px;
-
       z-index: 100;
-
     }
 
     .nav-link.active {
-
       background-color: #ffffff;
-
       color: #c7a138;
-
       border-radius: 8px;
-
       padding: 4px 8px;
-
       font-weight: bold;
-
     }
 
     @keyframes horizontalMove {
+      0%,
+      100% {
+        transform: translateX(0);
+      }
 
-    0%, 100% { transform: translateX(0); }
-
-    50% { transform: translateX(20px); }
-
+      50% {
+        transform: translateX(20px);
+      }
     }
 
     .animate-horizontal {
-
-    animation: horizontalMove 2s ease-in-out infinite;
-
+      animation: horizontalMove 2s ease-in-out infinite;
     }
 
+    @keyframes slide-loop {
+      0% {
+        transform: translateX(0%);
+      }
 
+      33.33% {
+        transform: translateX(-100%);
+      }
 
+      66.66% {
+        transform: translateX(-150%);
+      }
+
+      100% {
+        transform: translateX(0%);
+      }
+    }
+
+    .animate-slide-loop {
+      animation: slide-loop 25s ease-in-out infinite;
+    }
   </style>
-
 </head>
 
 <body class="bg-white text-gray-800">
 
-       
-
-    <div id="preloader" class="flex flex-col bg-gradient-to-br from-blue-500 to-yellow-400">
-
-        <img src="946b1906-f3a9-41c1-acdf-4234b909d0de.jfif" alt="Logo Riz-To" class="w-32 h-32 rounded-full mb-3 animate-bounce" />
-
-        <p class="text-white font-bold text-lg animate-pulse">Selamat datang di Riz-To Snack</p>
-
-      </div>
-
-      
-
-    <div class="spinner"></div>
-
+  <div id="preloader" class="flex flex-col bg-gradient-to-br from-blue-500 to-yellow-400">
+    <img src="946b1906-f3a9-41c1-acdf-4234b909d0de.jfif" alt="Logo Riz-To" class="w-32 h-32 rounded-full mb-3 animate-bounce" />
+    <p class="text-white font-bold text-lg animate-pulse">Selamat datang di Riz-To Snack</p>
   </div>
 
-
-
-
-
-  <div class="fixed top-0 right-0 bg-yellow-300/90 text-white px-4 py-2 shadow-lg z-50 rounded-bl-xl backdrop-blur-sm">
-
-    <nav class="flex flex-row gap-4 font-semibold text-sm text-right">
-
-      <a href="#beranda" class="nav-link hover:underline" data-target="beranda">Beranda</a>
-
-      <a href="#tentang" class="nav-link hover:underline" data-target="tentang">Tentang</a>
-
-      <a href="#produk" class="nav-link hover:underline" data-target="produk">Produk</a>
-
-      <a href="#kontak" class="nav-link hover:underline" data-target="kontak">Kontak</a>
-
-    </nav>
-
-  </div>
-
-
-
+  <!-- AREA SLIDE + NAVIGASI -->
   <div class="relative w-full h-[250px] sm:h-[350px] md:h-[650px] overflow-hidden">
-
-    <div class="carousel-track flex w-[70%] h-full animate-slide-loop">
-
-      <img src="pykbsr.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Slide 1" />
-
-      <img src="bwg1.jpeg" class="w-full h-full object-cover flex-shrink-0" alt="Slide 2" />
-
-      <img src="pykkcl.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Slide 3" />
-
+    <div class="absolute top-0 left-0 w-full z-20">
+      <nav class="flex justify-center gap-4 text-white font-semibold py-3 backdrop-blur-sm bg-yellow-300/90">
+        <a href="#beranda" class="nav-link hover:underline text-sm" data-target="beranda">Beranda</a>
+        <a href="#tentang" class="nav-link hover:underline text-sm" data-target="tentang">Tentang</a>
+        <a href="#produk" class="nav-link hover:underline text-sm" data-target="produk">Produk</a>
+        <a href="#kontak" class="nav-link hover:underline text-sm" data-target="kontak">Kontak</a>
+      </nav>
     </div>
-
+    <div class="carousel-track flex w-[70%] h-full animate-slide-loop">
+      <img src="pykbsr.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Slide 1" />
+      <img src="bwg1.jpeg" class="w-full h-full object-cover flex-shrink-0" alt="Slide 2" />
+      <img src="pykkcl.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Slide 3" />
+    </div>
   </div>
 
-  
-
-  <style>
+  <!-- KONTEN UTAMA -->
+   <style>
 
     @keyframes slide-loop {
 
@@ -570,114 +513,48 @@ Terima kasih telah berkunjung, selamat memilih camilan favorit Anda!.</p>
 
 
 
-  <a
+  <!-- Anda dapat lanjutkan bagian konten seperti #beranda, #tentang, #produk, dan lainnya dari HTML Anda yang sebelumnya tanpa diubah -->
 
-    href="https://wa.me/6282133728616"
-
-    target="_blank"
-
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/6282133728616" target="_blank"
     class="wa-float bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg flex items-center justify-center text-xl"
-
-    title="Chat via WhatsApp"
-
-  >
-
+    title="Chat via WhatsApp">
     <i class="fab fa-whatsapp"></i>
-
   </a>
 
-
-
   <script>
-
     AOS.init({ duration: 1000, once: true });
 
-
-
     window.addEventListener('load', () => {
-
-    const preloader = document.getElementById('preloader');
-
-    setTimeout(() => {
-
-    preloader.style.opacity = '0';
-
-    preloader.style.transition = 'opacity 0.5s ease';
-
-    setTimeout(() => {
-
-      preloader.style.display = 'none';
-
-    }, 500);
-
-    }, 1500); 
-
+      const preloader = document.getElementById('preloader');
+      setTimeout(() => {
+        preloader.style.opacity = '0';
+        preloader.style.transition = 'opacity 0.5s ease';
+        setTimeout(() => {
+          preloader.style.display = 'none';
+        }, 500);
+      }, 1500);
     });
-
-
 
     const sections = document.querySelectorAll("section[id]");
-
     const navLinks = document.querySelectorAll(".nav-link");
 
-
-
     window.addEventListener("scroll", () => {
-
       let current = "";
-
       sections.forEach((section) => {
-
         const sectionTop = section.offsetTop - 100;
-
         if (pageYOffset >= sectionTop) {
-
           current = section.getAttribute("id");
-
         }
-
       });
-
-
-
       navLinks.forEach((link) => {
-
         link.classList.remove("active");
-
         if (link.getAttribute("data-target") === current) {
-
           link.classList.add("active");
-
         }
-
       });
-
     });
-
   </script>
-
-  <script>
-
-  let index = 0;
-
-  const carousel = document.getElementById("carousel");
-
-  const totalSlides = carousel.children.length;
-
-
-
-  setInterval(() => {
-
-    index = (index + 1) % totalSlides;
-
-    carousel.style.transform = translateX(-${index * 100}%);
-
-  }, 3000); 
-
-</script>
-
-
-
 </body>
 
 </html>
