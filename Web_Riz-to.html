@@ -139,29 +139,25 @@
     <p class="text-white font-bold text-lg animate-pulse">Selamat datang di Riz-To Snack</p>
   </div>
 
- <!-- AREA SLIDE + NAVIGASI -->
-<!-- AREA SLIDE + NAVIGASI -->
-<div class="relative w-full overflow-hidden">
+<!-- NAVIGASI FIXED DI ATAS -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-center gap-4 text-white font-semibold py-3 backdrop-blur-sm bg-yellow-300/80 shadow-md">
+  <a href="#beranda" class="nav-link hover:underline text-sm">Beranda</a>
+  <a href="#tentang" class="nav-link hover:underline text-sm">Tentang</a>
+  <a href="#produk" class="nav-link hover:underline text-sm">Produk</a>
+  <a href="#kontak" class="nav-link hover:underline text-sm">Kontak</a>
+</nav>
 
-  <!-- SLIDER + NAVIGASI -->
-  <div class="relative w-full h-[250px] sm:h-[350px] md:h-[500px]">
+<!-- KASIH MARGIN UNTUK MENGHINDARI TERTUTUP MENU -->
+<div class="pt-[60px]">
 
-    <!-- NAVIGASI DI ATAS SLIDER -->
-    <nav class="absolute top-0 left-0 w-full z-10 flex justify-center gap-4 text-white font-semibold py-3 backdrop-blur-sm bg-yellow-300/70">
-      <a href="#beranda" class="nav-link hover:underline text-sm" data-target="beranda">Beranda</a>
-      <a href="#tentang" class="nav-link hover:underline text-sm" data-target="tentang">Tentang</a>
-      <a href="#produk" class="nav-link hover:underline text-sm" data-target="produk">Produk</a>
-      <a href="#kontak" class="nav-link hover:underline text-sm" data-target="kontak">Kontak</a>
-    </nav>
-
-    <!-- SLIDER GAMBAR -->
+  <!-- SLIDER -->
+  <div class="relative w-full h-[250px] sm:h-[350px] md:h-[500px] overflow-hidden">
     <div class="carousel-track flex w-full h-full animate-slide-loop">
       <img src="pykbsr.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Slide 1" />
       <img src="bwg1.jpeg" class="w-full h-full object-cover flex-shrink-0" alt="Slide 2" />
       <img src="pykkcl.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Slide 3" />
     </div>
   </div>
-</div>
 
 
 
