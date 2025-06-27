@@ -141,27 +141,28 @@
 
  <!-- AREA SLIDE + NAVIGASI -->
 <!-- AREA SLIDE + NAVIGASI -->
-<div class="relative w-full overflow-hidden mt-[56px]">
+<div class="relative w-full overflow-hidden">
 
+  <!-- SLIDER + NAVIGASI -->
+  <div class="relative w-full h-[250px] sm:h-[350px] md:h-[500px]">
 
-  <!-- NAVIGASI FIXED -->
-  <div class="fixed top-0 left-0 w-full z-50 shadow-md">
-    <nav class="flex justify-center gap-4 text-white font-semibold py-3 backdrop-blur-sm bg-yellow-300/90">
+    <!-- NAVIGASI DI ATAS SLIDER -->
+    <nav class="absolute top-0 left-0 w-full z-10 flex justify-center gap-4 text-white font-semibold py-3 backdrop-blur-sm bg-yellow-300/70">
       <a href="#beranda" class="nav-link hover:underline text-sm" data-target="beranda">Beranda</a>
       <a href="#tentang" class="nav-link hover:underline text-sm" data-target="tentang">Tentang</a>
       <a href="#produk" class="nav-link hover:underline text-sm" data-target="produk">Produk</a>
       <a href="#kontak" class="nav-link hover:underline text-sm" data-target="kontak">Kontak</a>
     </nav>
-  </div>
 
-  <!-- SLIDER -->
- <div class="carousel-track flex w-full h-[250px] sm:h-[350px] md:h-[500px] animate-slide-loop">
-
-    <img src="pykbsr.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Slide 1" />
-    <img src="bwg1.jpeg" class="w-full h-full object-cover flex-shrink-0" alt="Slide 2" />
-    <img src="pykkcl.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Slide 3" />
+    <!-- SLIDER GAMBAR -->
+    <div class="carousel-track flex w-full h-full animate-slide-loop">
+      <img src="pykbsr.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Slide 1" />
+      <img src="bwg1.jpeg" class="w-full h-full object-cover flex-shrink-0" alt="Slide 2" />
+      <img src="pykkcl.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Slide 3" />
+    </div>
   </div>
 </div>
+
 
 
   <!-- KONTEN UTAMA -->
