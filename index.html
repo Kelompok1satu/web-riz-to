@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Riz-To Snack</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="946b1906-f3a9-41c1-acdf-4234b909d0de.jfif" />
+  <style>
+    * {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom right, #3b82f6, #facc15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      z-index: 50;
+      transition: opacity 0.5s ease;
+    }
+
+    @keyframes bounce {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .animate-bounce {
+      animation: bounce 1s infinite;
+    }
+
+    @keyframes pulse {
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.5;
+      }
+    }
+
+    .animate-pulse {
+      animation: pulse 1.5s infinite;
+    }
+
+    .spinner {
+      border-radius: 0%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .wa-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 100;
+    }
+
+    .nav-link.active {
+      background-color: #ffffff;
+      color: #c7a138;
+      border-radius: 8px;
+      padding: 4px 8px;
+      font-weight: bold;
+    }
+
+    @keyframes horizontalMove {
+      0%,
+      100% {
+        transform: translateX(0);
+      }
+
+      50% {
+        transform: translateX(20px);
+      }
+    }
+
+    .animate-horizontal {
+      animation: horizontalMove 2s ease-in-out infinite;
+    }
+
+    @keyframes slide-loop {
+      0% {
+        transform: translateX(0%);
+      }
+
+      33.33% {
+        transform: translateX(-100%);
+      }
+
+      66.66% {
+        transform: translateX(-150%);
+      }
+
+      100% {
+        transform: translateX(0%);
+      }
+    }
+
+    .animate-slide-loop {
+      animation: slide-loop 25s ease-in-out infinite;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-800">
+
+  <div id="preloader" class="flex flex-col bg-gradient-to-br from-blue-500 to-yellow-400">
+    <img src="946b1906-f3a9-41c1-acdf-4234b909d0de.jfif" alt="Logo Riz-To" class="w-32 h-32 rounded-full mb-3 animate-bounce" />
+    <p class="text-white font-bold text-lg animate-pulse">Selamat datang di Riz-To Snack</p>
+  </div>
+
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-center gap-4 text-white font-semibold py-3 backdrop-blur-sm bg-yellow-300/60 shadow-sm">
+  <a href="#beranda" class="nav-link hover:underline text-sm">Beranda</a>
+  <a href="#tentang" class="nav-link hover:underline text-sm">Tentang</a>
+  <a href="#produk" class="nav-link hover:underline text-sm">Produk</a>
+  <a href="#kontak" class="nav-link hover:underline text-sm">Kontak</a>
+</nav>
+
+<div class="relative w-full h-[250px] sm:h-[350px] md:h-[500px] overflow-hidden">
+  <div class="carousel-track flex w-full h-full animate-slide-loop">
+    <img src="pykbsr.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Slide 1" />
+    <img src="bwg1.jpeg" class="w-full h-full object-cover flex-shrink-0" alt="Slide 2" />
+    <img src="pykkcl.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Slide 3" />
+  </div>
+</div>
+
+   <style>
+
+    @keyframes slide-loop {
+
+      0% { transform: translateX(0%); }
+
+      33.33% { transform: translateX(-100%); }
+
+      66.66% { transform: translateX(-150%); }
+
+      100% { transform: translateX(0%); }
+
+    }
+
+  
+
+    .animate-slide-loop {
+
+      animation: slide-loop 25s ease-in-out infinite;
+
+    }
+
+  </style>
+
+<div class="text-center mt-6">
+
+  <img
+
+    src="946b1906-f3a9-41c1-acdf-4234b909d0de.jfif"
+
+    class="w-48 h-48 sm:w-60 sm:h-60 object-cover rounded-full mx-auto animate-horizontal"
+
+    alt="Logo Bulat"
+
+  >
+
+</div>
+  <section id="beranda" class="py-12 px-4 bg-white">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-center" data-aos="zoom-in">Selamat Datang di Riz-To Snack!</h2>
+
+      <p class="text-base sm:text-lg mb-6 text-center" data-aos="zoom-in">Rasakan kelezatan camilan rumahan yang dibuat dengan sepenuh hati dan bahan-bahan pilihan.
+
+Riz-to Snack hadir untuk menemani setiap momen santai Anda dengan cita rasa yang gurih, renyah, dan pasti nagih.
+
+Terima kasih telah berkunjung, selamat memilih camilan favorit Anda!.</p>
+
+      <div class="text-center">
+
+        <a href="https://wa.me/6282133728616" class="bg-green-400 text-white px-6 py-2 rounded-lg font-semibold hover:bg-gray-500 transition">Hubungi Kami</a>
+
+      </div>
+
+  </section>
+  <section id="tentang" class="py-16 px-4 bg-white">
+
+    <div class="max-w-4xl mx-auto border border-gray-200 rounded-xl p-6 shadow-md text-center" data-aos="zoom-in">
+
+      <h2 class="text-3xl font-bold mb-6">Tentang Riz-To Snack</h2>
+
+      <p class="text-gray-700 text-base sm:text-lg mb-4">
+
+        Riz-To Snack adalah usaha cemilan rumahan yang berfokus pada rasa dan kualitas. Kami menggunakan bahan-bahan alami dan resep turun-temurun untuk menciptakan pengalaman makan yang tak terlupakan.
+
+      </p>
+
+      <p class="text-gray-700 text-base sm:text-lg">
+
+        Usaha ini telah memiliki legalitas resmi berupa <strong>Nomor Induk Berusaha (NIB)</strong> dan juga telah tersertifikasi <strong>Halal</strong>, sehingga menjamin keamanan dan kenyamanan konsumen.
+
+      </p>
+
+    </div>
+
+  </section>
+
+<section id="produk" class="py-16 bg-gray-200 px-4">
+
+    <h2 class="text-3xl font-bold mb-10 text-center" data-aos="fade-up">Produk Kami</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="100">
+
+        <img src="IMG_20250604_161315_312.jpg" class="w-full h-48 object-contain bg-white rounded mb-4" alt="Peyek">
+
+        <h3 class="text-xl font-semibold">Brambang Goreng</h3>
+
+        <p class="text-gray-600">Gurih dan renyah, cocok untuk segala suasana.</p>
+
+        <div class="mt-4 flex items-center justify-between">
+
+          <p class="font-bold">Rp15.000</p>
+
+          <a href="https://wa.me/6282133728616?text=Hai Riz-to, saya mau pesen peyek" target="_blank" class="bg-green-500 text-white px-4 py-1 rounded hover:bg-green-600 text-sm">Pesan Sekarang</a>
+
+        </div>
+
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="200">
+
+        <img src="IMG_20250604_161443_830.jpg" class="w-full h-48 object-contain bg-white rounded mb-4" alt="Brambang Goreng">
+
+        <h3 class="text-xl font-semibold">Peyek</h3>
+
+        <p class="text-gray-600">Aroma menggoda, rasa tiada dua.</p>
+
+        <div class="mt-4 flex items-center justify-between">
+
+          <p class="font-bold">Rp10.000</p>
+
+          <a href="https://wa.me/6282133728616?text=Hai Riz-to, saya mau pesen brambang goreng" target="_blank" class="bg-green-500 text-white px-4 py-1 rounded hover:bg-green-600 text-sm">Pesan Sekarang</a>
+
+        </div>
+
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="100">
+
+        <img src="IMG_20250604_161420_439.jpg" class="w-full h-48 object-contain bg-white rounded mb-4" alt="Peyek">
+
+        <h3 class="text-xl font-semibold">Peyek 5 lt</h3>
+
+        <p class="text-gray-600">Gurih dan renyah, cocok untuk segala suasana.</p>
+
+        <div class="mt-4 flex items-center justify-between">
+
+          <p class="font-bold">Rp50.000</p>
+
+          <a href="https://wa.me/6282133728616?text=Hai Riz-to, saya mau pesen peyek ukuran 5 lt" target="_blank" class="bg-green-500 text-white px-4 py-1 rounded hover:bg-green-600 text-sm">Pesan Sekarang</a>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</section>
+  <section class="bg-yellow-300 py-12 px-4">
+
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
+
+      <div class="md:w-1/2 text-center md:text-left">
+
+        <h2 class="text-5xl font-bold text-red-600 mb-2">Riz-to Snack</h2>
+
+        <p class="text-xl italic text-gray-700 mb-4">Home Made</p>
+
+          <p class="text-sm text-gray-800">
+
+          snack rumahan terbaik dengan rasa yang otentik
+
+        </p>
+
+         <img src="IMG-20250612-WA0013.jpg" alt="Label NIB" class="w-100 h-100 mx-auto mb-4">
+
+      </div>
+
+      <div class="md:w-1/2 text-gray-800 text-base leading-relaxed" data-aos="zoom-in">
+
+        <p class="mb-4">
+
+          Riz-To Snack selalu mengutamakan kepuasan pelanggan, menghadirkan produk yang aman, halal, dan lezat.
+
+        </p>
+
+        <p>
+
+          Riz-To juga telah memenuhi berbagai regulasi penting, seperti Sertifikasi Halal dan Nomor Induk Berusaha (NIB), demi menjamin kepercayaan dan kenyamanan konsumen.
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+<section id="kontak" class="py-16 px-4 bg-white">
+
+  <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+
+    <img src="04dbd359163fef4125a2169d1845b0c5.jpg" alt="Logo Halal" class="w-60 h-60 mx-auto mb-4">
+
+    
+
+</style>
+
+</head>
+
+<body>
+
+    <section aria-labelledby="bantuan-title">
+
+      <h2 class="text-3xl font-bold mb-1">Bantuan</h2>
+
+      <ul>
+
+        <li><a href="https://wa.me/6282133728616">Hubungi kami</a></li>
+
+        <li><a href="#">Return Policy</a></li>
+
+        <li><a href="#">Product Guarantee</a></li>
+
+      </ul>
+
+    </section>
+    <br>
+
+    <section aria-labelledby="Riz-To">
+
+      <h2 class="text-3xl font-bold mb-1">Riz-to</h2>
+
+      <ul>
+
+        <li><a href="#">Riz-to Snack</a></li>
+
+        <li><a href="#">Toko Kami</a></li>
+
+        <li><a href="#">Riz-To Official reseller</a></li>
+
+      </ul>
+
+    </section>
+
+  </main>
+      <br>
+
+        <h2 class="text-3xl font-bold mb-2">Hubungi Kami</h2>
+
+      <p><i class="fas fa-map-marker-alt text-blue-500 mr-2"></i><strong>Alamat:</strong> Desa Dagen RT 03 RW 10 Kecamatan Jaten, Kabupaten Karanganyar</p>
+
+      <p><i class="fas fa-phone text-green-500 mr-2"></i><strong>Telepon/WhatsApp:</strong> <a href="https://wa.me/6282133728616" class="text-green-600 hover:underline">+62 821-3372-8616</a></p>
+
+      <p><i class="fas fa-envelope text-red-500 mr-2"></i><strong>Email:</strong> riztosnack@gmail.com</p>
+
+    </div>
+
+  </div>
+
+</section>
+
+  
+  <a href="https://wa.me/6282133728616" target="_blank"
+    class="wa-float bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg flex items-center justify-center text-xl"
+    title="Chat via WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script>
+    AOS.init({ duration: 1000, once: true });
+
+    window.addEventListener('load', () => {
+      const preloader = document.getElementById('preloader');
+      setTimeout(() => {
+        preloader.style.opacity = '0';
+        preloader.style.transition = 'opacity 0.5s ease';
+        setTimeout(() => {
+          preloader.style.display = 'none';
+        }, 500);
+      }, 1500);
+    });
+
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 100;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute("id");
+        }
+      });
+      navLinks.forEach((link) => {
+        link.classList.remove("active");
+        if (link.getAttribute("data-target") === current) {
+          link.classList.add("active");
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
